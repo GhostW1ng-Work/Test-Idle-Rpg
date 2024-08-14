@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class FightStarter : MonoBehaviour
 {
+	[SerializeField] private WarriorHealth _playerHealth;
 	[SerializeField] private Sprite _active;
 	[SerializeField] private Sprite _notActive;
 
@@ -22,11 +23,13 @@ public class FightStarter : MonoBehaviour
 
 	private void OnEnable()
 	{
+		_playerHealth.PlayerDied += ChangeFightState;
 		_button.onClick.AddListener(ChangeFightState);
 	}
 
 	private void OnDisable()
 	{
+		_playerHealth.PlayerDied -= ChangeFightState;
 		_button.onClick.RemoveListener(ChangeFightState);
 	}
 

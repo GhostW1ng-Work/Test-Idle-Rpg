@@ -2235,6 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b2c93971fbb814b84e2e033114cd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerHealth: {fileID: 1731728471}
   _active: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
   _notActive: {fileID: 21300000, guid: 3abb5cffe108a94448dabf55d2e33e8e, type: 3}
 --- !u!1 &1724408293

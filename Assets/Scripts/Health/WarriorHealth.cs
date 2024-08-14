@@ -11,6 +11,8 @@ public class WarriorHealth : MonoBehaviour
 	public int CurrentHealth => _currentHealth;
 
 	public event Action HealthChanged;
+	public event Action PlayerDied;
+	public event Action EnemyDied;
 
 	private void Awake()
 	{
@@ -19,7 +21,10 @@ public class WarriorHealth : MonoBehaviour
 
 	private void Die()
 	{
-		print(name + " Die");
+		if(_character.IsPlayer)
+			PlayerDied?.Invoke();
+		else
+			EnemyDied?.Invoke();
 	}
 
 	public void Heal(int healAmount)
