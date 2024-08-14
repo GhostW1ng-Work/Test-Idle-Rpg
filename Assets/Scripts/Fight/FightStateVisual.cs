@@ -4,10 +4,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class FightStateVisual : MonoBehaviour
 {
-	[SerializeField] private Slider _timer;
 	[SerializeField] private Attacker _attacker;
 	[SerializeField] private FightStarter _starter;
 
+	private Slider _timer;
 	private bool _canAttack = false;
 
 	private void Awake()

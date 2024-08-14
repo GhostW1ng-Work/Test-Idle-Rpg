@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WarriorHealth : MonoBehaviour
@@ -7,7 +8,12 @@ public class WarriorHealth : MonoBehaviour
 
 	private int _currentHealth;
 
-	private void Start()
+	public int MaxHealth => _maxHealth;
+	public int CurrentHealth => _currentHealth;
+
+	public event Action HealthChanged;
+
+	private void Awake()
 	{
 		_currentHealth = _maxHealth;
 	}
@@ -27,11 +33,11 @@ public class WarriorHealth : MonoBehaviour
 			damage -= _armor;
 
 		_currentHealth -= damage;
-
 		if (_currentHealth <= 0)
 		{
 			_currentHealth = 0;
 			Die();
 		}
+		HealthChanged?.Invoke();
 	}
 }
