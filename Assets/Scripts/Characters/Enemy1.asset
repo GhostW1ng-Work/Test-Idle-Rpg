@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1373c52f725ac4e48a58b14feb64381a, type: 3}
-  m_Name: Dagger
+  m_Script: {fileID: 11500000, guid: c4b710b8cd313c54d83ec5b93218a727, type: 3}
+  m_Name: Enemy1
   m_EditorClassIdentifier: 
-  _attackSpeed: 0.5
+  _maxHealth: 10
+  _armor: 0
   _attackStrength: 1
+  _cooldown: 1

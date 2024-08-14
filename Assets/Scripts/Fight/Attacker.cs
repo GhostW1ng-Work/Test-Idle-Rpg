@@ -6,15 +6,14 @@ public class Attacker : MonoBehaviour
 	[SerializeField] private WarriorHealth _enemyHealth;
 	[SerializeField] private FightStarter _fightStarter;
 	[SerializeField] private WeaponSO _weapon;
-	[SerializeField] private int _attackStrength = 1;
-	[SerializeField] private float _cooldown = 1f;
+	[SerializeField] private CharacterSO _character;
 
 	private float _currentCooldown;
 	private float _currentAttackSpeed;
 
 	private bool _canAttack;
 
-	public float Cooldown => _cooldown;
+	public float Cooldown => _character.Cooldown;
 	public float CurrentCooldown => _currentCooldown;
 	public float CurrentAttackSpeed => _currentAttackSpeed;
 	public WeaponSO Weapon => _weapon;
@@ -63,13 +62,13 @@ public class Attacker : MonoBehaviour
 	{
 		_currentCooldown += Time.deltaTime;
 
-		if (_currentCooldown >= 1 / _cooldown)
+		if (_currentCooldown >= 1 / _character.Cooldown)
 		{
 			_currentAttackSpeed += Time.deltaTime;
 
 			if (_currentAttackSpeed >= 1 / _weapon.AttackSpeed)
 			{
-				_enemyHealth.TakeDamage(_attackStrength + _attackStrength);
+				_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
 				ResetAttack();
 			}
 		}

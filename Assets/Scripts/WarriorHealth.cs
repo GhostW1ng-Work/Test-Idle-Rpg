@@ -3,19 +3,18 @@ using UnityEngine;
 
 public class WarriorHealth : MonoBehaviour
 {
-	[SerializeField] private int _maxHealth = 10;
-	[SerializeField] private int _armor = 0;
+	[SerializeField] private CharacterSO _character;
 
 	private int _currentHealth;
 
-	public int MaxHealth => _maxHealth;
+	public int MaxHealth => _character.MaxHealth;
 	public int CurrentHealth => _currentHealth;
 
 	public event Action HealthChanged;
 
 	private void Awake()
 	{
-		_currentHealth = _maxHealth;
+		_currentHealth = _character.MaxHealth;
 	}
 
 	private void Die()
@@ -27,10 +26,10 @@ public class WarriorHealth : MonoBehaviour
 	{
 		if (damage < 0) damage = 0;
 
-		if (damage <= _armor)
+		if (damage <= _character.Armor)
 			damage = 0;
 		else
-			damage -= _armor;
+			damage -= _character.Armor;
 
 		_currentHealth -= damage;
 		if (_currentHealth <= 0)
