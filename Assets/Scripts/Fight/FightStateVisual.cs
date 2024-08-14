@@ -24,7 +24,8 @@ public class FightStateVisual : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_starter.FightStateChanged += OnFightStateChanged;
+		if(_starter != null)
+			_starter.FightStateChanged += OnFightStateChanged;
 	}
 
 	private void OnDisable()
@@ -34,9 +35,11 @@ public class FightStateVisual : MonoBehaviour
 
 	private void Start()
 	{
-		_actionCanvas.alpha = 0;
-		_timer.value = 0;
-		
+		if (_attacker.Character.IsPlayer)
+		{
+			_actionCanvas.alpha = 0;
+			_timer.value = 0;
+		}	
 	}
 
 	private void Update()
@@ -47,7 +50,7 @@ public class FightStateVisual : MonoBehaviour
 		}
 	}
 
-	private void OnFightStateChanged()
+	public void OnFightStateChanged()
 	{
 		_canAttack = !_canAttack;
 		if(!_canAttack)
@@ -59,6 +62,12 @@ public class FightStateVisual : MonoBehaviour
 		{
 			_actionCanvas.alpha = 1;
 		}
+	}
+
+	public void Inititialize(FightStarter starter)
+	{
+		_starter = starter;
+		OnFightStateChanged();
 	}
 
 	public void Attack()

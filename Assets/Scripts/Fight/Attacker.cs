@@ -5,6 +5,7 @@ public class Attacker : MonoBehaviour
 {
 	[SerializeField] private WarriorHealth _enemyHealth;
 	[SerializeField] private FightStarter _fightStarter;
+	[SerializeField] private FightStateVisual _stateVisual;
 	[SerializeField] private WeaponSO _weapon;
 	[SerializeField] private CharacterSO _character;
 
@@ -17,21 +18,28 @@ public class Attacker : MonoBehaviour
 	public float CurrentCooldown => _currentCooldown;
 	public float CurrentAttackSpeed => _currentAttackSpeed;
 	public WeaponSO Weapon => _weapon;
+	public FightStateVisual FightStateVisual => _stateVisual;
+	public CharacterSO Character => _character;
 
 	private void OnEnable()
 	{
-		_fightStarter.FightStateChanged += ChangeCanAttack;
+		if (_character.IsPlayer)
+			_fightStarter.FightStateChanged += ChangeCanAttack;
 	}
 
 	private void OnDisable()
 	{
-		_fightStarter.FightStateChanged -= ChangeCanAttack;
+		if (_character.IsPlayer)
+			_fightStarter.FightStateChanged -= ChangeCanAttack;
 	}
 
 	private void Start()
 	{
-		_canAttack = false;
-		ResetAttack();
+		if (_character.IsPlayer)
+		{
+			_canAttack = false;
+			ResetAttack();
+		}
 	}
 
 	private void Update()
@@ -55,6 +63,18 @@ public class Attacker : MonoBehaviour
 		if (!_canAttack)
 		{
 			ResetAttack();
+		}
+	}
+
+	public void Initialize(WarriorHealth enemyHealth, FightStarter starter)
+	{
+		_enemyHealth = enemyHealth;
+		if (!_character.IsPlayer)
+		{
+			_fightStarter = starter;
+			_canAttack = true;
+			ResetAttack();
+			_stateVisual.Inititialize(starter);
 		}
 	}
 
