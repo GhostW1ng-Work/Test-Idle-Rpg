@@ -24,7 +24,10 @@ public class WarriorHealth : MonoBehaviour
 		if(_character.IsPlayer)
 			PlayerDied?.Invoke();
 		else
+		{
+			print("Враг сдох");
 			EnemyDied?.Invoke();
+		}
 	}
 
 	public void Heal(int healAmount)

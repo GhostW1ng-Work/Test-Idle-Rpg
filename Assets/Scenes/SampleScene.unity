@@ -1678,7 +1678,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 1685989174}
   _stateVisual: {fileID: 1894379337}
-  _weapon: {fileID: 11400000, guid: b424ee40bbd38b249abf2d463891611a, type: 2}
+  _weapon: {fileID: 11400000, guid: 007f9e07da8736543b95778bfbb73672, type: 2}
   _character: {fileID: 11400000, guid: 9555918648c87934c8ecf6dd9f999ea4, type: 2}
 --- !u!114 &1731728471
 MonoBehaviour:
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   _actionCanvas: {fileID: 1577135334}
   _timerImage: {fileID: 1531647907}
   _actionImage: {fileID: 1945195683}
-  _reloadSprite: {fileID: 21300000, guid: 4a59607811bc1f9459591856511467a5, type: 3}
+  _reloadSprite: {fileID: 21300000, guid: 9d525296885017644955990a97b4d76b, type: 3}
   _attackSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
   _attacker: {fileID: 1731728470}
   _starter: {fileID: 1685989174}

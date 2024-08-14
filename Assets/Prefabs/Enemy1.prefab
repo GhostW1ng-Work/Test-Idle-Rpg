@@ -2052,7 +2052,7 @@ MonoBehaviour:
   _actionCanvas: {fileID: 8328120008300052572}
   _timerImage: {fileID: 8328120008433858511}
   _actionImage: {fileID: 8328120008040576668}
-  _reloadSprite: {fileID: 21300000, guid: 4a59607811bc1f9459591856511467a5, type: 3}
+  _reloadSprite: {fileID: 21300000, guid: 9d525296885017644955990a97b4d76b, type: 3}
   _attackSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
   _attacker: {fileID: 8328120008115838795}
   _starter: {fileID: 0}
