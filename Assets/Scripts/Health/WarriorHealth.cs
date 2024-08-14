@@ -22,6 +22,18 @@ public class WarriorHealth : MonoBehaviour
 		print(name + " Die");
 	}
 
+	public void Heal(int healAmount)
+	{
+		_currentHealth += healAmount;
+		if (healAmount <= 0)
+			_currentHealth += 0;
+
+		if(_currentHealth >= MaxHealth)
+			_currentHealth = MaxHealth;
+
+		HealthChanged?.Invoke();
+	}
+
 	public void TakeDamage(int damage)
 	{
 		if (damage < 0) damage = 0;
