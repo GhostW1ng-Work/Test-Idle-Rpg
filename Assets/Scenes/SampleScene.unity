@@ -422,7 +422,7 @@ MonoBehaviour:
   updateTiming: 1
   unscaledTime: 0
   _animationName: Idle
-  loop: 0
+  loop: 1
   timeScale: 1
 --- !u!33 &1187157903
 MeshFilter:
@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 1731728471}
+  _playerAttacker: {fileID: 1731728470}
 --- !u!1 &1197619382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1848,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 1685989174}
   _stateVisual: {fileID: 1894379337}
-  _weapon: {fileID: 11400000, guid: 007f9e07da8736543b95778bfbb73672, type: 2}
+  _weapon: {fileID: 11400000, guid: d8944ba71511e134c8b8afb69ca2d9de, type: 2}
   _character: {fileID: 11400000, guid: 9555918648c87934c8ecf6dd9f999ea4, type: 2}
 --- !u!114 &1731728471
 MonoBehaviour:

@@ -13,9 +13,9 @@ public enum AnimationsName
 public class PlayerAnimatorController : MonoBehaviour
 {
 	[SerializeField] private WarriorHealth _playerHealth;
+	[SerializeField] private Attacker _playerAttacker;
 
 	private SkeletonAnimation _skeletonAnimation;
-	private float _timeForDeadAnimation = 0.5f;
 
 	private void Awake()
 	{
@@ -25,11 +25,13 @@ public class PlayerAnimatorController : MonoBehaviour
 	private void OnEnable()
 	{
 		_playerHealth.PlayerDied += OnPlayerDied;
+		_playerAttacker.AttackStarted += OnAttack;
 	}
 
 	private void OnDisable()
 	{
 		_playerHealth.PlayerDied -= OnPlayerDied;
+		_playerAttacker.AttackStarted -= OnAttack;
 	}
 
 	private void Start()
@@ -54,8 +56,19 @@ public class PlayerAnimatorController : MonoBehaviour
 		_skeletonAnimation.AnimationName = nameof(AnimationsName.Idle);
 	}
 
-	private void OnAttack()
+	private void OnAttack(float duration)
 	{
+		StartCoroutine(Attack(duration));
+	}
 
+	private IEnumerator Attack(float duration)
+	{
+		_skeletonAnimation.AnimationName = nameof(AnimationsName.Attack);
+		_skeletonAnimation.loop = false;
+		TrackEntry track = _skeletonAnimation.state.GetCurrent(0);
+		track.Animation.Duration = duration;
+		yield return new WaitForSeconds(track.Animation.Duration);
+		_skeletonAnimation.loop = true;
+		_skeletonAnimation.AnimationName = nameof(AnimationsName.Idle);
 	}
 }

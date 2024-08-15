@@ -32,6 +32,7 @@ public class Attacker : MonoBehaviour
 	public CharacterSO Character => _character;
 
 	public event Action WeaponChanged;
+	public event Action<float> AttackStarted;
 
 	private void OnEnable()
 	{
@@ -99,6 +100,7 @@ public class Attacker : MonoBehaviour
 
 			if (_currentCooldown >= 1 / _character.Cooldown)
 			{
+				AttackStarted?.Invoke(1 / _weapon.AttackSpeed);
 				_currentState = AttackState.Attack;
 				_currentAttackSpeed += Time.deltaTime;
 				if (_currentAttackSpeed >= 1 / _weapon.AttackSpeed)
