@@ -1,5 +1,13 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum AttackState
+{
+	Preparation,
+	Attack
+}
 
 public class Attacker : MonoBehaviour
 {
@@ -11,8 +19,11 @@ public class Attacker : MonoBehaviour
 
 	private float _currentCooldown;
 	private float _currentAttackSpeed;
+	private float _changeWeaponCooldown = 2f;
 
+	private AttackState _currentState = AttackState.Preparation;
 	private bool _canAttack;
+	private bool _weaponIsSwitching = false;
 
 	public float Cooldown => _character.Cooldown;
 	public float CurrentCooldown => _currentCooldown;
@@ -20,6 +31,8 @@ public class Attacker : MonoBehaviour
 	public WeaponSO Weapon => _weapon;
 	public FightStateVisual FightStateVisual => _stateVisual;
 	public CharacterSO Character => _character;
+
+	public event Action WeaponChanged;
 
 	private void OnEnable()
 	{
@@ -80,16 +93,59 @@ public class Attacker : MonoBehaviour
 
 	public void Attack()
 	{
-		_currentCooldown += Time.deltaTime;
-
-		if (_currentCooldown >= 1 / _character.Cooldown)
+		_currentState = AttackState.Preparation;
+		if (!_weaponIsSwitching)
 		{
-			_currentAttackSpeed += Time.deltaTime;
+			_currentCooldown += Time.deltaTime;
 
-			if (_currentAttackSpeed >= 1 / _weapon.AttackSpeed)
+			if (_currentCooldown >= 1 / _character.Cooldown)
 			{
-				_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
-				ResetAttack();
+				_currentState = AttackState.Attack;
+				_currentAttackSpeed += Time.deltaTime;
+				if (_currentAttackSpeed >= 1 / _weapon.AttackSpeed)
+				{
+					_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
+					ResetAttack();
+				}
+			}
+		}
+	}
+
+	private IEnumerator WaitBeforeSwitchWeapon(float seconds, WeaponSO weapon)
+	{
+		_weaponIsSwitching = true;
+		yield return new WaitForSeconds(seconds);
+		_weapon = weapon;
+		_weaponIsSwitching = false;
+		WeaponChanged?.Invoke();
+	}
+
+	private IEnumerator WaitBeforeAttackEnded(float seconds, WeaponSO weapon)
+	{
+		yield return new WaitForSeconds(seconds);
+		_weaponIsSwitching = true;
+		yield return new WaitForSeconds(_changeWeaponCooldown);
+		_weapon = weapon;
+		_weaponIsSwitching = false;
+		WeaponChanged?.Invoke();
+	}
+
+	public void SetWeapon(WeaponSO weapon)
+	{
+		if (!_canAttack)
+		{
+			_weapon = weapon;
+			WeaponChanged?.Invoke();
+		}
+		else
+		{
+			if (_currentState == AttackState.Preparation)
+			{
+				StartCoroutine(WaitBeforeSwitchWeapon(_changeWeaponCooldown, weapon));
+			}
+			else
+			{
+				StartCoroutine(WaitBeforeAttackEnded(1 / _weapon.AttackSpeed - _currentAttackSpeed, weapon));
 			}
 		}
 	}
