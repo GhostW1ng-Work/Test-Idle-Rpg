@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1373c52f725ac4e48a58b14feb64381a, type: 3}
   m_Name: GreatSword
   m_EditorClassIdentifier: 
-  _attackSpeed: 0.1
+  _attackSpeed: 1
   _attackStrength: 0
   _weaponSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
