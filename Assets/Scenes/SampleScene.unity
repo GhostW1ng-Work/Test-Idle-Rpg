@@ -732,6 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
+  - {fileID: 8328120008115838795, guid: 8d942afa8d48bfb4293263d901744cba, type: 3}
   - {fileID: 8328120008115838795, guid: 9dd52b0c89788c84f8572e17076db54d, type: 3}
   _playerAttacker: {fileID: 1731728470}
   _player: {fileID: 1731728471}

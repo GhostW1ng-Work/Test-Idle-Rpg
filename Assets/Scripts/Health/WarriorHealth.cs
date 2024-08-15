@@ -25,7 +25,6 @@ public class WarriorHealth : MonoBehaviour
 			PlayerDied?.Invoke();
 		else
 		{
-			print("Враг сдох");
 			EnemyDied?.Invoke();
 		}
 	}

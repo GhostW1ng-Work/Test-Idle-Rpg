@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-	[SerializeField] private Attacker[] _enemies;
+	[SerializeField] private List<Attacker> _enemies;
 	[SerializeField] private Attacker _playerAttacker;
 	[SerializeField] private WarriorHealth _player;
 	[SerializeField] private FightStarter _fightStarter;
@@ -60,7 +61,27 @@ public class EnemySpawner : MonoBehaviour
 
 	private void CreateEnemy()
 	{
-		int index = Random.Range(0, _enemies.Length);
+		int spawnValue = Random.Range(0, 101);
+
+		for (int i = 0; i < _enemies.Count; i++)
+		{
+			if (_enemies[i].Character is EnemySO enemy)
+			{
+				if (spawnValue <= enemy.SpawnChance)
+				{
+					InstantiateEnemy(i);
+					break;
+				}
+				else
+				{
+					spawnValue -= enemy.SpawnChance;
+				}
+			}
+		}
+	}
+
+	private void InstantiateEnemy(int index)
+	{
 		Attacker newAttacker = Instantiate(_enemies[index], _spawnPoint.position, Quaternion.Euler(0, 180, 0));
 		newAttacker.Initialize(_player, _fightStarter);
 		_currentAttacker = newAttacker;
