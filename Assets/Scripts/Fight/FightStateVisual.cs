@@ -9,7 +9,6 @@ public class FightStateVisual : MonoBehaviour
 	[SerializeField] private Image _actionImage;
 
 	[SerializeField] private Sprite _reloadSprite;
-	[SerializeField] private Sprite _attackSprite;
 
 	[SerializeField] private Attacker _attacker;
 	[SerializeField] private FightStarter _starter;
@@ -26,11 +25,15 @@ public class FightStateVisual : MonoBehaviour
 	{
 		if(_starter != null)
 			_starter.FightStateChanged += OnFightStateChanged;
+		if(_attacker.Character.IsPlayer)
+			_attacker.WeaponChanged += OnWeaponChanged;
 	}
 
 	private void OnDisable()
 	{
 		_starter.FightStateChanged -= OnFightStateChanged;
+		if (_attacker.Character.IsPlayer)
+			_attacker.WeaponChanged -= OnWeaponChanged;
 	}
 
 	private void Start()
@@ -48,6 +51,11 @@ public class FightStateVisual : MonoBehaviour
 		{
 			Attack();
 		}
+	}
+
+	private void OnWeaponChanged()
+	{
+		_actionImage.sprite = _attacker.Weapon.WeaponSprite;
 	}
 
 	public void OnFightStateChanged()
@@ -80,7 +88,7 @@ public class FightStateVisual : MonoBehaviour
 
 		if (_attacker.CurrentCooldown >= 1 / _attacker.Cooldown)
 		{
-			_actionImage.sprite = _attackSprite;
+			_actionImage.sprite = _attacker.Weapon.WeaponSprite;
 			_timerImage.color = Color.gray;
 
 			_timer.maxValue = 1 / _attacker.Weapon.AttackSpeed;

@@ -40,27 +40,13 @@ public class WeaponChanger : MonoBehaviour
 
 	private void Start()
 	{
-		if (_isMelee)
-		{
-			_image.sprite = _swordImage;
-		}
-		else
-		{
-			_image.sprite = _bowImage;
-		}
+		_image.sprite = _playerAttacker.Weapon.WeaponSprite;
 	}
 
 	private void OnWeaponChanged()
 	{
 		_isChanged = true;
-		if (_isMelee)
-		{
-			_image.sprite = _swordImage;
-		}
-		else
-		{
-			_image.sprite = _bowImage;
-		}
+		_image.sprite = _playerAttacker.Weapon.WeaponSprite;
 	}
 
 	private void ChangeWeapon()

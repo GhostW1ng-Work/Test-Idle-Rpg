@@ -2061,9 +2061,11 @@ MonoBehaviour:
   _timerImage: {fileID: 1531647907}
   _actionImage: {fileID: 1945195683}
   _reloadSprite: {fileID: 21300000, guid: 9d525296885017644955990a97b4d76b, type: 3}
-  _attackSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
+  _meleeSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
+  _rangeSprite: {fileID: 21300000, guid: 0c7f2b30efde63b4e85506baea6e3484, type: 3}
   _attacker: {fileID: 1731728470}
   _starter: {fileID: 1685989174}
+  _changer: {fileID: 1455455050}
 --- !u!1 &1945195681
 GameObject:
   m_ObjectHideFlags: 0
