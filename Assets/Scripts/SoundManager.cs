@@ -32,11 +32,4 @@ public class SoundManager : MonoBehaviour
 		_source.Play();
 
 	}
-
-	private IEnumerator PlaySound(int index)
-	{
-
-		yield return new WaitForSeconds(_source.clip.length);
-		_source.Stop();
-	}
 }
