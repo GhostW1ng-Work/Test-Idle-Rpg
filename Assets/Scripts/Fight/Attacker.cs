@@ -33,6 +33,7 @@ public class Attacker : MonoBehaviour
 
 	public event Action WeaponChanged;
 	public event Action<float> AttackStarted;
+	public event Action AttackEnded;
 
 	private void OnEnable()
 	{

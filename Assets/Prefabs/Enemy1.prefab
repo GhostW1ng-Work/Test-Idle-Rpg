@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8330912711705659371}
   - component: {fileID: 8269434667005920981}
+  - component: {fileID: 9038223893193989027}
   m_Layer: 0
   m_Name: Rogue_05
   m_TagString: Untagged
@@ -54,6 +55,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9038223893193989027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327402568556871983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ee2e6ae7b992d46ad57a536a7f1268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAttacker: {fileID: 8328120008115838795}
+  _health: {fileID: 8328120008115838794}
 --- !u!1 &8327402568690890227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,11 +2068,8 @@ MonoBehaviour:
   _timerImage: {fileID: 8328120008433858511}
   _actionImage: {fileID: 8328120008040576668}
   _reloadSprite: {fileID: 21300000, guid: 9d525296885017644955990a97b4d76b, type: 3}
-  _meleeSprite: {fileID: 21300000, guid: 0c7f2b30efde63b4e85506baea6e3484, type: 3}
-  _rangeSprite: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
   _attacker: {fileID: 8328120008115838795}
   _starter: {fileID: 0}
-  _changer: {fileID: 0}
 --- !u!1 &8328120007336753082
 GameObject:
   m_ObjectHideFlags: 0

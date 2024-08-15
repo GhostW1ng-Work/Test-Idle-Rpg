@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8330912711705659371}
   - component: {fileID: 8269434667005920981}
+  - component: {fileID: 4182584624355018695}
   m_Layer: 0
   m_Name: Rogue_05
   m_TagString: Untagged
@@ -54,6 +55,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4182584624355018695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327402568556871983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ee2e6ae7b992d46ad57a536a7f1268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAttacker: {fileID: 8328120008115838795}
+  _health: {fileID: 8328120008115838794}
 --- !u!1 &8327402568690890227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,7 +2388,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 0}
   _stateVisual: {fileID: 8328120007292120669}
-  _weapon: {fileID: 11400000, guid: d8944ba71511e134c8b8afb69ca2d9de, type: 2}
+  _weapon: {fileID: 11400000, guid: b424ee40bbd38b249abf2d463891611a, type: 2}
   _character: {fileID: 11400000, guid: 182d6bb60fbcc20468feeeae0be5753e, type: 2}
 --- !u!1 &8328120008251880253
 GameObject:
