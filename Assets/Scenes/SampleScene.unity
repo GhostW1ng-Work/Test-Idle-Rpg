@@ -1155,6 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
+  - {fileID: 8328120008115838795, guid: 8d942afa8d48bfb4293263d901744cba, type: 3}
   - {fileID: 8328120008115838795, guid: 9dd52b0c89788c84f8572e17076db54d, type: 3}
   _playerAttacker: {fileID: 1731728470}
   _player: {fileID: 1731728471}
@@ -2757,6 +2758,7 @@ GameObject:
   - component: {fileID: 1731728470}
   - component: {fileID: 1731728472}
   - component: {fileID: 1731728473}
+  - component: {fileID: 1731728474}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2925,6 +2927,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1731728474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731728468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902210a92b9406647981ccfd07bb28e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 1238297911}
+  _starter: {fileID: 1685989174}
+  _enemy: {fileID: 0}
 --- !u!1 &1859803414
 GameObject:
   m_ObjectHideFlags: 0

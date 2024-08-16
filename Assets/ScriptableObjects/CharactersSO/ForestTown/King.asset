@@ -16,6 +16,8 @@ MonoBehaviour:
   _maxHealth: 10
   _armor: 0
   _attackStrength: 1
+  _luck: 5
   _cooldown: 1
+  _xp: 5
   _spawnPosition: {x: 4, y: 2.5, z: 0}
-  _spawnChance: 20
+  _spawnChance: 30

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
 
 	private bool _fightStarted = false;
 	private Attacker _currentAttacker;
+
+	public event Action<WarriorHealth> EnemyCreated;
 
 	private void OnEnable()
 	{
@@ -60,7 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
 	private void CreateEnemy()
 	{
-		int spawnValue = Random.Range(0, 101);
+		int spawnValue = UnityEngine.Random.Range(0, 101);
 		if(_enemies.Count < 2)
 		{
 			InstantiateEnemy(0);
@@ -93,6 +96,7 @@ public class EnemySpawner : MonoBehaviour
 		if (!_currentAttacker.Character.IsPlayer)
 			_currentAttacker.GetComponent<WarriorHealth>().EnemyDied += OnEnemyDied;
 		WarriorHealth newEnemy = newAttacker.GetComponent<WarriorHealth>();
+		EnemyCreated?.Invoke(newEnemy);
 		_playerAttacker.Initialize(newEnemy, _fightStarter);
 	}
 

@@ -7,6 +7,7 @@ public class WarriorHealth : MonoBehaviour
 
 	private int _currentHealth;
 
+	public CharacterSO Character => _character;
 	public int MaxHealth => _character.MaxHealth;
 	public int CurrentHealth => _currentHealth;
 

@@ -107,7 +107,12 @@ public class Attacker : MonoBehaviour
 				_currentAttackSpeed += Time.deltaTime;
 				if (_currentAttackSpeed >= 1 / _weapon.AttackSpeed)
 				{
-					_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
+					float crit = UnityEngine.Random.Range(0, 101);
+					if (crit <= _character.Luck)
+						_enemyHealth.TakeDamage((_character.AttackStrength + _weapon.AttackStrength) * 2);
+					else
+						_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
+
 					ResetAttack();
 				}
 			}
