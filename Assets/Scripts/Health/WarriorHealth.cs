@@ -6,6 +6,7 @@ public class WarriorHealth : MonoBehaviour
 	[SerializeField] private CharacterSO _character;
 
 	private int _currentHealth;
+	private PlayerSO _playerSO;
 
 	public CharacterSO Character => _character;
 	public int MaxHealth => _character.MaxHealth;
@@ -17,7 +18,28 @@ public class WarriorHealth : MonoBehaviour
 
 	private void Awake()
 	{
+		if(_character is PlayerSO)
+			_playerSO = (PlayerSO)_character;
 		_currentHealth = _character.MaxHealth;
+	}
+
+	private void OnEnable()
+	{
+		if(_character is PlayerSO)
+			_playerSO.LevelIncreased += OnLevelIncreased;
+
+	}
+
+	private void OnDisable()
+	{
+		if (_character is PlayerSO)
+			_playerSO.LevelIncreased -= OnLevelIncreased;
+	}
+
+	private void OnLevelIncreased()
+	{
+		int healAmount = _character.MaxHealth - _currentHealth;
+		Heal(healAmount);
 	}
 
 	private void Die()
