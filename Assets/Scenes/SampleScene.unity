@@ -122,145 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5247840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5247841}
-  - component: {fileID: 5247844}
-  - component: {fileID: 5247843}
-  - component: {fileID: 5247842}
-  - component: {fileID: 5247845}
-  m_Layer: 5
-  m_Name: Beach
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5247841
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1491914576}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5061037, y: 0.13524112}
-  m_AnchorMax: {x: 0.59000003, y: 0.2658223}
-  m_AnchoredPosition: {x: 0, y: -2.5}
-  m_SizeDelta: {x: 0.09500122, y: -0.024993896}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5247842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 5247843}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5247843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d7c36ba2d8f84549b0cb68e717ec9eb, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &5247844
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247840}
-  m_CullTransparentMesh: 1
---- !u!114 &5247845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f6dffd13e14f94da62fe74dbd7f852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemiesOnLocation:
-  - {fileID: 8328120008115838795, guid: c519746fd268a6c409f4df413414b3ea, type: 3}
-  _background: {fileID: 1425290652}
-  _locationSprite: {fileID: 21300000, guid: 3d7c36ba2d8f84549b0cb68e717ec9eb, type: 3}
-  _spawner: {fileID: 1238297911}
 --- !u!1 &38414187
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
+  - {fileID: 4371943676327186325, guid: 8cafeaa9575b6654ab261eb6857439f1, type: 3}
   - {fileID: 7951001008491742964, guid: a87395a862fc1d448946531f21e8cfd5, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: 935a4070e98995d429fcb3f7d1f1063a, type: 3}
@@ -822,10 +684,10 @@ RectTransform:
   m_Father: {fileID: 1491914576}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.40283537, y: 0.6631345}
-  m_AnchorMax: {x: 0.48553053, y: 0.7987589}
-  m_AnchoredPosition: {x: 2, y: -1}
-  m_SizeDelta: {x: 2.0950012, y: -7.024994}
+  m_AnchorMin: {x: 0.5913476, y: 0.26453793}
+  m_AnchorMax: {x: 0.6744086, y: 0.39200002}
+  m_AnchoredPosition: {x: 2.5, y: 4.5}
+  m_SizeDelta: {x: 1.0950012, y: 3.9749756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124651795
 MonoBehaviour:
@@ -923,6 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
   - {fileID: 5704450870502711336, guid: 23e4b297de5c46342973259dc5bc3113, type: 3}
+  - {fileID: 2373796719656280720, guid: b12fb45ddd9ff9f4f860a1cf08de846b, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: 8c2dab3d9ebdc3e44bf0672fd9bd5aa1, type: 3}
   _spawner: {fileID: 1238297911}
@@ -2099,7 +1962,6 @@ RectTransform:
   - {fileID: 1890350924}
   - {fileID: 1073159393}
   - {fileID: 1124651794}
-  - {fileID: 5247841}
   m_Father: {fileID: 1563708518}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2591,7 +2453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
-  - {fileID: 8328120008115838795, guid: 15238e16ea40e2041bc5086c7858692f, type: 3}
   - {fileID: 8328120008115838795, guid: 8d942afa8d48bfb4293263d901744cba, type: 3}
   - {fileID: 8328120008115838795, guid: 9dd52b0c89788c84f8572e17076db54d, type: 3}
   _background: {fileID: 1425290652}
@@ -3305,6 +3166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
+  - {fileID: 1444889075803306461, guid: 653cd659dae9e6548ae60b9bb1a77ede, type: 3}
   - {fileID: 3456485683763375797, guid: 4371ac61134cc4f4fbaa39b5da0d9863, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: a2403f6c065756e46b3166a1b37eb086, type: 3}
