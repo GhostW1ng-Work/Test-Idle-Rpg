@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1444889075803306450}
   - component: {fileID: 1444889075803306462}
   - component: {fileID: 1444889075803306461}
+  - component: {fileID: 5071475513495075328}
   m_Layer: 0
   m_Name: FlyingEye
   m_TagString: Untagged
@@ -140,6 +141,19 @@ MonoBehaviour:
   _stateVisual: {fileID: 1444889077374964619}
   _weapon: {fileID: 11400000, guid: d8944ba71511e134c8b8afb69ca2d9de, type: 2}
   _character: {fileID: 11400000, guid: f13677e64db4ddf4f9ecae05c92e2bb9, type: 2}
+--- !u!114 &5071475513495075328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444889075803306449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ee2e6ae7b992d46ad57a536a7f1268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAttacker: {fileID: 1444889075803306461}
 --- !u!1 &1444889076198687007
 GameObject:
   m_ObjectHideFlags: 0

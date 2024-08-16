@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
-  - {fileID: 8328120008115838795, guid: 8c3a7df951c26394db60b793ec316718, type: 3}
+  - {fileID: 5704450870502711336, guid: 23e4b297de5c46342973259dc5bc3113, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: 8c2dab3d9ebdc3e44bf0672fd9bd5aa1, type: 3}
   _spawner: {fileID: 1238297911}
