@@ -2370,7 +2370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
-  - {fileID: 8328120008115838795, guid: 15238e16ea40e2041bc5086c7858692f, type: 3}
+  - {fileID: 1444889075803306461, guid: 653cd659dae9e6548ae60b9bb1a77ede, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: f68081b3f74d0a94eaf348ae01016fc6, type: 3}
   _spawner: {fileID: 1238297911}
@@ -3076,7 +3076,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 1685989174}
   _stateVisual: {fileID: 1894379337}
-  _weapon: {fileID: 11400000, guid: d8944ba71511e134c8b8afb69ca2d9de, type: 2}
+  _weapon: {fileID: 11400000, guid: 007f9e07da8736543b95778bfbb73672, type: 2}
   _character: {fileID: 11400000, guid: 9555918648c87934c8ecf6dd9f999ea4, type: 2}
 --- !u!114 &1731728471
 MonoBehaviour:

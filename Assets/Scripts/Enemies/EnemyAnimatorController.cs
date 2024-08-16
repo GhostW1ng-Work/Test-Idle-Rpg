@@ -16,15 +16,24 @@ public class EnemyAnimatorController : MonoBehaviour
 	private void OnEnable()
 	{
 		_enemyAttacker.AttackStarted += OnAttack;
+		_enemyAttacker.AttackEnded += OnAttackEnded;
 	}
 
 	private void OnDisable()
 	{
 		_enemyAttacker.AttackStarted -= OnAttack;
+		_enemyAttacker.AttackEnded -= OnAttackEnded;
 	}
 
 	private void OnAttack(float s)
 	{
-		_animator.SetTrigger(IS_ATTACK);
+		_animator.SetBool(IS_ATTACK, true);
 	}
+
+	private void OnAttackEnded()
+	{
+		_animator.SetBool(IS_ATTACK, false);
+	}
+
+
 }

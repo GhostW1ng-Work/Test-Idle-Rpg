@@ -94,6 +94,7 @@ public class Attacker : MonoBehaviour
 
 	public void Attack()
 	{
+		AttackEnded?.Invoke();
 		_currentState = AttackState.Preparation;
 		if (!_weaponIsSwitching)
 		{

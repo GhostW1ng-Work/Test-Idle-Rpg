@@ -2389,7 +2389,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 0}
   _stateVisual: {fileID: 8328120007292120669}
-  _weapon: {fileID: 11400000, guid: 007f9e07da8736543b95778bfbb73672, type: 2}
+  _weapon: {fileID: 11400000, guid: c670d98e7b3cd7a4b98368a4c137789c, type: 2}
   _character: {fileID: 11400000, guid: 7347d62ef19257848a7bb808414d6c23, type: 2}
 --- !u!82 &5410489037084112463
 AudioSource:
