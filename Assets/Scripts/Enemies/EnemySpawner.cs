@@ -87,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
 	private void InstantiateEnemy(int index)
 	{
 		Attacker newAttacker = Instantiate(_enemies[index], _spawnPoint.position, Quaternion.Euler(0, 180, 0));
+		newAttacker.transform.position = newAttacker.Character.SpawnPosition;
 		newAttacker.Initialize(_player, _fightStarter);
 		_currentAttacker = newAttacker;
 		if (!_currentAttacker.Character.IsPlayer)

@@ -2155,7 +2155,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491914575}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2731,6 +2731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
+  - {fileID: 8328120008115838795, guid: 15238e16ea40e2041bc5086c7858692f, type: 3}
   - {fileID: 8328120008115838795, guid: 8d942afa8d48bfb4293263d901744cba, type: 3}
   - {fileID: 8328120008115838795, guid: 9dd52b0c89788c84f8572e17076db54d, type: 3}
   _background: {fileID: 1425290652}
@@ -3444,7 +3445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemiesOnLocation:
-  - {fileID: 8328120008115838795, guid: 8d942afa8d48bfb4293263d901744cba, type: 3}
+  - {fileID: 3456485683763375797, guid: 4371ac61134cc4f4fbaa39b5da0d9863, type: 3}
   _background: {fileID: 1425290652}
   _locationSprite: {fileID: 21300000, guid: a2403f6c065756e46b3166a1b37eb086, type: 3}
   _spawner: {fileID: 1238297911}
