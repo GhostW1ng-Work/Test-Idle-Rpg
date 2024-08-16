@@ -20,3 +20,7 @@ MonoBehaviour:
   _cooldown: 1
   _xp: 0
   _spawnPosition: {x: 0, y: 0, z: 0}
+  _currentLevel: 1
+  _xpIncreaseAmount: 5
+  _needXpForNextLevel: 10
+  _currentXp: 0

@@ -5,6 +5,7 @@ public class HealthBar : MonoBehaviour
 {
 	[SerializeField] private WarriorHealth _warriorHealth;
 	[SerializeField] private float _speed = 0.1f;
+
 	private Slider _slider;
 
 	private void Awake()

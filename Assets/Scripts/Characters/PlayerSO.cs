@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="Player",menuName ="New Player")]
@@ -12,6 +13,10 @@ public class PlayerSO : CharacterSO
 	public int CurrentLevel =>_currentLevel;
 	public int XPIncreaseAmount =>_xpIncreaseAmount;
 	public int NeedXpForNextLevel => _needXpForNextLevel;
+	public int CurrentXp => _currentXp;
+
+	public event Action XpChanged;
+	public event Action LevelIncreased;
 
 	public void GetXP(int xp)
 	{
@@ -22,7 +27,9 @@ public class PlayerSO : CharacterSO
 			_currentLevel++;
 			_needXpForNextLevel += _xpIncreaseAmount;
 			IncreaseStats();
+			LevelIncreased?.Invoke();
 		}
+		XpChanged?.Invoke();
 	}
 
 	private void Awake()
