@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyAnimatorController : MonoBehaviour
 {
 	private const string IS_ATTACK = "IsAttack";

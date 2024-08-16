@@ -81,7 +81,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EvilWizard2
+  m_Name: EvilWizard
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Dead
@@ -117,7 +117,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rogue_attack_01
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1713845897924345434}
@@ -131,7 +131,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9a7a21884a1d5af439523a3616a7d02e, type: 2}
+  m_Motion: {fileID: 7400000, guid: f1daac4045edda4419cbf8773bf1e44f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -171,7 +171,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rogue_idle_01
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3428791185791098168}
@@ -185,7 +185,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee0a7ebd79d7b30459cd6f8d1f4e946a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 917b80a6871e7094b900b3db620537af, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
