@@ -19,5 +19,8 @@ MonoBehaviour:
   _luck: 5
   _cooldown: 1
   _xp: 1
+  _upgradePoints: 0
+  _maxCooldown: 3
+  _maxLuck: 99
   _spawnPosition: {x: 3, y: -2.2, z: 0}
   _spawnChance: 90

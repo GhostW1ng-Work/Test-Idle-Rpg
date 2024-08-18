@@ -12,6 +12,7 @@ public class Attacker : MonoBehaviour
 {
 	[SerializeField] private WarriorHealth _enemyHealth;
 	[SerializeField] private FightStarter _fightStarter;
+	[SerializeField] private CanvasGroup _critText;
 	[SerializeField] private FightStateVisual _stateVisual;
 	[SerializeField] private WeaponSO _weapon;
 	[SerializeField] private CharacterSO _character;
@@ -49,6 +50,7 @@ public class Attacker : MonoBehaviour
 
 	private void Start()
 	{
+		_critText.alpha = 0;
 		if (_character.IsPlayer)
 		{
 			_canAttack = false;
@@ -109,14 +111,26 @@ public class Attacker : MonoBehaviour
 				{
 					float crit = UnityEngine.Random.Range(0, 101);
 					if (crit <= _character.Luck)
+					{
+						StartCoroutine(ShowCritText());
 						_enemyHealth.TakeDamage((_character.AttackStrength + _weapon.AttackStrength) * 2);
+					}
 					else
+					{
 						_enemyHealth.TakeDamage(_character.AttackStrength + _weapon.AttackStrength);
+					}
 
 					ResetAttack();
 				}
 			}
 		}
+	}
+
+	private IEnumerator ShowCritText()
+	{
+		_critText.alpha = 1;
+		yield return new WaitForSeconds(0.5f);
+		_critText.alpha = 0;
 	}
 
 	private IEnumerator WaitBeforeSwitchWeapon(float seconds, WeaponSO weapon)

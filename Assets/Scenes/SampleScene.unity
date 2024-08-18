@@ -5568,6 +5568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyHealth: {fileID: 0}
   _fightStarter: {fileID: 1685989174}
+  _critText: {fileID: 2103054150}
   _stateVisual: {fileID: 1894379337}
   _weapon: {fileID: 11400000, guid: 007f9e07da8736543b95778bfbb73672, type: 2}
   _character: {fileID: 11400000, guid: 9555918648c87934c8ecf6dd9f999ea4, type: 2}
