@@ -13,7 +13,7 @@ public enum Stats
 
 public class StatsTextUpdater : MonoBehaviour
 {
-	[SerializeField] private WarriorHealth _playerHealth;
+	[SerializeField] private Attacker _player;
 	[SerializeField] private Stats _stat;
 
 	private TMP_Text _text;
@@ -25,12 +25,12 @@ public class StatsTextUpdater : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_playerHealth.Character.StatIncreased += OnStatIncreased;
+		_player.Character.StatIncreased += OnStatIncreased;
 	}
 
 	private void OnDisable()
 	{
-		_playerHealth.Character.StatIncreased -= OnStatIncreased;
+		_player.Character.StatIncreased -= OnStatIncreased;
 	}
 
 	private void Start()
@@ -43,19 +43,19 @@ public class StatsTextUpdater : MonoBehaviour
 		switch (_stat)
 		{
 			case Stats.MaxHealth:
-				_text.text = _playerHealth.Character.MaxHealth.ToString();
+				_text.text = _player.Character.MaxHealth.ToString();
 				break;
 			case Stats.AttackStrength:
-				_text.text = _playerHealth.Character.AttackStrength.ToString();
+				_text.text = (_player.Weapon.AttackStrength + _player.Character.AttackStrength).ToString();
 				break;
 			case Stats.Cooldown:
-				_text.text = Math.Round(1 / _playerHealth.Character.Cooldown,3).ToString();
+				_text.text = Math.Round(1 / _player.Character.Cooldown,3).ToString();
 				break;
 			case Stats.Armor:
-				_text.text = _playerHealth.Character.Armor.ToString();
+				_text.text = _player.Character.Armor.ToString();
 				break;
 			case Stats.Luck:
-				_text.text = _playerHealth.Character.Luck.ToString();
+				_text.text = _player.Character.Luck.ToString();
 				break;
 		}
 	}
