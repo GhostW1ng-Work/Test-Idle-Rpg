@@ -49,7 +49,7 @@ public class StatsTextUpdater : MonoBehaviour
 				_text.text = _playerHealth.Character.AttackStrength.ToString();
 				break;
 			case Stats.Cooldown:
-				_text.text = Math.Round(1 / _playerHealth.Character.Cooldown,2).ToString();
+				_text.text = Math.Round(1 / _playerHealth.Character.Cooldown,3).ToString();
 				break;
 			case Stats.Armor:
 				_text.text = _playerHealth.Character.Armor.ToString();

@@ -45,7 +45,7 @@ public class UpgradeButton : MonoBehaviour
 
 	private void OnClick()
 	{
-		if(_player.Character.UpgradePoints > 0)
+		if (_player.Character.UpgradePoints > 0)
 		{
 			switch (_stat)
 			{
@@ -67,7 +67,7 @@ public class UpgradeButton : MonoBehaviour
 
 	private void OnUpgradePointsChanged()
 	{
-		if(_player.Character.UpgradePoints > 0)
+		if (_player.Character.UpgradePoints > 0)
 			SwitchButtonActivity(true);
 		else
 			SwitchButtonActivity(false);
@@ -75,12 +75,53 @@ public class UpgradeButton : MonoBehaviour
 
 	private void SwitchButtonActivity(bool isActive)
 	{
-		if (isActive)
-			_canvasGroup.alpha = 1;
-		else
-			_canvasGroup.alpha = 0;
+		if (_stat == Stat.Luck)
+		{
+			if (_player.Character.Luck >= _player.Character.MaxLuck)
+			{
+				_canvasGroup.alpha = 0;
+				_canvasGroup.interactable = false;
+				_canvasGroup.blocksRaycasts = false;
+			}
+			else
+			{
+				if (isActive)
+					_canvasGroup.alpha = 1;
+				else
+					_canvasGroup.alpha = 0;
 
-		_canvasGroup.interactable = isActive;
-		_canvasGroup.blocksRaycasts = isActive;
+				_canvasGroup.interactable = isActive;
+				_canvasGroup.blocksRaycasts = isActive;
+			}
+		}
+		else if (_stat == Stat.Cooldown)
+		{
+			if (_player.Character.Cooldown >= _player.Character.MaxCooldown)
+			{
+				_canvasGroup.alpha = 0;
+				_canvasGroup.interactable = false;
+				_canvasGroup.blocksRaycasts = false;
+			}
+			else
+			{
+				if (isActive)
+					_canvasGroup.alpha = 1;
+				else
+					_canvasGroup.alpha = 0;
+
+				_canvasGroup.interactable = isActive;
+				_canvasGroup.blocksRaycasts = isActive;
+			}
+		}
+		else
+		{
+			if (isActive)
+				_canvasGroup.alpha = 1;
+			else
+				_canvasGroup.alpha = 0;
+
+			_canvasGroup.interactable = isActive;
+			_canvasGroup.blocksRaycasts = isActive;
+		}
 	}
 }
