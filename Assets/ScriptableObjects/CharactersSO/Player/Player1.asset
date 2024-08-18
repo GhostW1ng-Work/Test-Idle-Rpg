@@ -16,7 +16,7 @@ MonoBehaviour:
   _maxHealth: 10
   _armor: 0
   _attackStrength: 1
-  _luck: 1
+  _luck: 50
   _cooldown: 1
   _xp: 0
   _upgradePoints: 0

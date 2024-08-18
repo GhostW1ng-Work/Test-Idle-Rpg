@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour
 
 	private void Update()
 	{
-		_slider.value = Mathf.Lerp(_slider.value, _warriorHealth.CurrentHealth,_speed);
+		_slider.value = Mathf.Lerp(_slider.value, _warriorHealth.CurrentHealth, _speed);
 	}
 
 	private void OnStatIncreased()

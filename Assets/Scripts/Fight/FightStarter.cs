@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FightStarter : MonoBehaviour
 {
 	[SerializeField] private WarriorHealth _playerHealth;
+	[SerializeField] private CanvasGroup _needHealingText;
 	[SerializeField] private Sprite _active;
 	[SerializeField] private Sprite _notActive;
 
@@ -24,35 +26,56 @@ public class FightStarter : MonoBehaviour
 	private void OnEnable()
 	{
 		_playerHealth.PlayerDied += ChangeFightState;
-		_button.onClick.AddListener(ChangeFightState);
+		_button.onClick.AddListener(OnClick);
 	}
 
 	private void OnDisable()
 	{
 		_playerHealth.PlayerDied -= ChangeFightState;
-		_button.onClick.RemoveListener(ChangeFightState);
+		_button.onClick.RemoveListener(OnClick);
 	}
 
 	private void Start()
 	{
-		_fightStarted = !_fightStarted;
+		_needHealingText.alpha = 0;
+		_image.sprite = _notActive;
 
-		if (_fightStarted)
-			_image.sprite = _active;
-		else
-			_image.sprite = _notActive;
+	}
 
+	private void OnClick()
+	{
+		if (!_fightStarted && _playerHealth.CurrentHealth > 0)
+		{
+			ChangeFightState();
+		}
+ 		else if(!_fightStarted && _playerHealth.CurrentHealth <= 0)
+		{
+			StartCoroutine(ShowText());
+		}
+		else if (_fightStarted)
+		{
+			ChangeFightState();
+		}
 	}
 
 	private void ChangeFightState()
 	{
 		_fightStarted = !_fightStarted;
 
-		if(_fightStarted )
+		if (_fightStarted)
 			_image.sprite = _active;
 		else
+		{
 			_image.sprite = _notActive;
+		}
 
 		FightStateChanged?.Invoke();
+	}
+
+	private IEnumerator ShowText()
+	{
+		_needHealingText.alpha = 1;
+		yield return new WaitForSeconds(1);
+		_needHealingText.alpha = 0;
 	}
 }
