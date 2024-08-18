@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class CharacterSO : ScriptableObject
@@ -9,12 +10,14 @@ public abstract class CharacterSO : ScriptableObject
 	[SerializeField] private float _luck = 5;
 	[SerializeField] private float _cooldown;
 	[SerializeField] private int _xp;
+	[SerializeField] private int _upgradePoints = 0;
 	[SerializeField] private Vector3 _spawnPosition;
 
 	private int _healthIncreaseAmount = 5;
 	private int _attackStrengthIncreaseAmount = 1;
 	private float _luckIncreaseAmount = 1;
 	private float _cooldownIncreaseAmount = 0.1f;
+
 
 	public bool IsPlayer => _isPlayer;
 	public int MaxHealth => _maxHealth;
@@ -23,13 +26,51 @@ public abstract class CharacterSO : ScriptableObject
 	public float Luck => _luck;
 	public float Cooldown => _cooldown;
 	public int XP => _xp;
+	public int UpgradePoints => _upgradePoints;
 	public Vector3 SpawnPosition => _spawnPosition;
 
-	protected void IncreaseStats()
+	public event Action StatIncreased;
+	public event Action UpgradePointsChanged;
+
+	public void IncreaseUpgradePoints()
 	{
+		_upgradePoints += 1;
+		UpgradePointsChanged?.Invoke();
+	}
+
+	public void IncreaseMaxHealth(bool spendUpgradePoints)
+	{
+		if (spendUpgradePoints)
+		{
+			_upgradePoints -= 1;
+			UpgradePointsChanged?.Invoke();
+		}
+
 		_maxHealth += _healthIncreaseAmount;
+		StatIncreased?.Invoke();
+	}
+
+	public void IncreaseAttackStrength()
+	{
+		_upgradePoints -= 1;
+		UpgradePointsChanged?.Invoke();
 		_attackStrength += _attackStrengthIncreaseAmount;
+		StatIncreased?.Invoke();
+	}
+
+	public void IncreaseLuck()
+	{
+		_upgradePoints -= 1;
+		UpgradePointsChanged?.Invoke();
 		_luck += _luckIncreaseAmount;
+		StatIncreased?.Invoke();
+	}
+
+	public void IncreaseCooldown()
+	{
+		_upgradePoints -= 1;
+		UpgradePointsChanged?.Invoke();
 		_cooldown += _cooldownIncreaseAmount;
+		StatIncreased?.Invoke();
 	}
 }

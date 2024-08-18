@@ -26,17 +26,10 @@ public class PlayerSO : CharacterSO
 			_currentXp = 0;
 			_currentLevel++;
 			_needXpForNextLevel += _xpIncreaseAmount;
-			IncreaseStats();
+			IncreaseMaxHealth(false);
+			IncreaseUpgradePoints();
 			LevelIncreased?.Invoke();
 		}
 		XpChanged?.Invoke();
-	}
-
-	private void Awake()
-	{
-		_currentLevel = 1;
-		_xpIncreaseAmount = 5;
-		_needXpForNextLevel = 10;
-		_currentXp = 0;
 	}
 }
