@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _maxHealth: 10
+  _maxHealth: 30
   _armor: 0
-  _attackStrength: 1
+  _attackStrength: 10
   _luck: 5
   _cooldown: 1
-  _xp: 5
+  _xp: 30
+  _upgradePoints: 0
   _spawnPosition: {x: 4, y: 2.5, z: 0}
   _spawnChance: 30

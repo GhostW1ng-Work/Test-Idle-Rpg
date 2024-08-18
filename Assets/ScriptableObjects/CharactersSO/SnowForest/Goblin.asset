@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Goblin
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _maxHealth: 5
+  _maxHealth: 12
   _armor: 0
-  _attackStrength: 1
-  _luck: 5
+  _attackStrength: 7
+  _luck: 10
   _cooldown: 1
-  _xp: 4
+  _xp: 6
+  _upgradePoints: 0
   _spawnPosition: {x: 4, y: 0, z: 0}
   _spawnChance: 90

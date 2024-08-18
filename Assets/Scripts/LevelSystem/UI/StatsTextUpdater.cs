@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -48,7 +49,7 @@ public class StatsTextUpdater : MonoBehaviour
 				_text.text = _playerHealth.Character.AttackStrength.ToString();
 				break;
 			case Stats.Cooldown:
-				_text.text = _playerHealth.Character.Cooldown.ToString();
+				_text.text = Math.Round(1 / _playerHealth.Character.Cooldown,2).ToString();
 				break;
 			case Stats.Armor:
 				_text.text = _playerHealth.Character.Armor.ToString();

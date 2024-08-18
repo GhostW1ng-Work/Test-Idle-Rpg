@@ -13,6 +13,18 @@ public class HealthBar : MonoBehaviour
 		_slider = GetComponent<Slider>();
 	}
 
+	private void OnEnable()
+	{
+		if (_warriorHealth.Character.IsPlayer)
+			_warriorHealth.Character.StatIncreased += OnStatIncreased;
+	}
+
+	private void OnDisable()
+	{
+		if(_warriorHealth.Character.IsPlayer)
+			_warriorHealth.Character.StatIncreased -= OnStatIncreased;
+	}
+
 	private void Start()
 	{
 		_slider.maxValue = _warriorHealth.MaxHealth;
@@ -22,5 +34,10 @@ public class HealthBar : MonoBehaviour
 	private void Update()
 	{
 		_slider.value = Mathf.Lerp(_slider.value, _warriorHealth.CurrentHealth,_speed);
+	}
+
+	private void OnStatIncreased()
+	{
+		_slider.maxValue = _warriorHealth.Character.MaxHealth;
 	}
 }

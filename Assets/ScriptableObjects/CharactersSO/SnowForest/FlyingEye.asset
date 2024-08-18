@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: FlyingEye
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _maxHealth: 5
+  _maxHealth: 10
   _armor: 0
-  _attackStrength: 1
+  _attackStrength: 5
   _luck: 5
   _cooldown: 0.5
-  _xp: 2
+  _xp: 4
+  _upgradePoints: 0
   _spawnPosition: {x: 4, y: 0, z: 0}
   _spawnChance: 50

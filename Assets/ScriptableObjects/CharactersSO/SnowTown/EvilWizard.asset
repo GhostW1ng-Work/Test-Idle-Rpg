@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: EvilWizard
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _maxHealth: 5
+  _maxHealth: 7
   _armor: 0
-  _attackStrength: 2
+  _attackStrength: 8
   _luck: 5
-  _cooldown: 1
-  _xp: 4
+  _cooldown: 2
+  _xp: 8
+  _upgradePoints: 0
   _spawnPosition: {x: 4, y: 0, z: 0}
   _spawnChance: 90
